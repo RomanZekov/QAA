@@ -4,7 +4,7 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Enter something here : ");
+		System.out.println("Enter a number : ");
 	    
 		   String sInput;
 	     
@@ -21,7 +21,7 @@ public class MainClass {
 	    	   
 	       }
 	       
-	       System.out.println(factorial);
+	       System.out.println("Factorial of the entered number is: " + factorial);
 
 	}
 
