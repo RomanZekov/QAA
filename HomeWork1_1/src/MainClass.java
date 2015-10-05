@@ -12,12 +12,12 @@ public class MainClass {
 	       sInput = scanIn.nextLine();
 	       scanIn.close();            
 
-	       int value = Integer.parseInt(sInput);
+	       int value = Integer.parseInt( sInput );
 	       int factorial = 1;
 	       
 	       for (int i=1; i <= value; i++) {
 	    	   
-	    	   factorial = factorial * i; 
+	    	   factorial = factorial * i ; 
 	    	   
 	       }
 	       
