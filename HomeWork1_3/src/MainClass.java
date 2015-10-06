@@ -9,13 +9,13 @@ public class MainClass {
 		
 		Scanner input = new Scanner(System.in); 
 		 
-		System.out.print("Enter a: "); 
+		System.out.print("Enter a: " ); 
 		a = input.nextInt(); 
 		 
-		System.out.print("Enter b: "); 
+		System.out.print("Enter b: " ); 
 		b = input.nextInt(); 
 		 
-		System.out.print("Enter c: "); 
+		System.out.print("Enter c: " ); 
 		c = input.nextInt(); 
 		
 		input.close();
