@@ -10,6 +10,7 @@ public class MainClass {
 		System.out.print("Enter a number: " ); 
 		numStr = input.nextLine();
 		input.close();
+		
 		int sum = 0;
 		
 		for (int i = 0; i < numStr.length(); i++) {
