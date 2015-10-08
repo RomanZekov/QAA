@@ -13,7 +13,7 @@ public class MainClass {
 	       scanIn.close();            
 
 	       int value = Integer.parseInt(sInput);
-	       int factorial = 1;
+	       double factorial = 1;
 	       
 	       for (int i=1; i <= value; i++) {
 	    	   
