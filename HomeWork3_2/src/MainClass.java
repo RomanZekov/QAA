@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.TreeSet;
 import java.util.HashSet;
 
-public class MainClass {
+public class MainClass1 {
 
 	public static void main(String[] args) {
 		
@@ -13,6 +14,12 @@ public class MainClass {
 		ArrayList al  = new ArrayList<>();
 		TreeSet ts	  = new TreeSet<>();
 		HashSet hs    = new HashSet<>();
+		
+		//al.sort(arg0);
+		al.add(new Object);
+		al.add(new Object);
+		
+		Collections.sort(al);
 		
 		
 		
