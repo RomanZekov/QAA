@@ -104,7 +104,6 @@ public class MainClass {
 		printMatrix( matrix );
 		
 
-
 	}
 
 }
