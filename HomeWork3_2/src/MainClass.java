@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.TreeSet;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class MainClass {
+public class MainClass1 {
 
 	public static void main(String[] args) {
 		
@@ -14,6 +15,12 @@ public class MainClass {
 		ArrayList<Integer> al  = new ArrayList<Integer>();
 		TreeSet<Integer> ts	  = new TreeSet<Integer>();
 		HashSet<Integer> hs    = new HashSet<Integer>();
+		
+		//al.sort(arg0);
+		al.add(new Object);
+		al.add(new Object);
+		
+		Collections.sort(al);
 		
 		
 		long startTime = System.currentTimeMillis();
