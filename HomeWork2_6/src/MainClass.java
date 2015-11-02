@@ -38,7 +38,7 @@ public class MainClass {
 		int max = matrix1[x][0];
 		boolean b = true;
 		
-		for (int i = 0; i < 6; i++ ) {
+		for (int i = 0; i < 7; i++ ) {
 			
 			if ( max < matrix1[x][i+1] ) {
 				
@@ -52,17 +52,40 @@ public class MainClass {
 		return b;
 	}
 	
+	
+	public static void SortMatrixRow ( int [][] matrix1, int x) {
+		
+		for (int i = 0; i < 7; i++ ) {
+			
+			for (int j = 0; j < 7 - i - 1; j++) {
+				
+				if ( matrix1[x][j] > matrix1[x][j + 1]) {
+					
+					int t = matrix1[x][j + 1];
+					matrix1[x][j + 1] = matrix1[x][j];
+					matrix1[x][j] = t;
+					
+				}
+				
+			}
+			
+		}
+		
+	}	
+	
 	public static void modifyMatrix( int[][] matrix1 ) {
 		
 		for ( int i = 0; i < 6; i++ ) {
 			
 			for ( int j = 0; j < 7; j++ ) {
 				
-				
+				if ( !checkThatFirstElementIsMax(matrix1, i) ) {
+					
+					SortMatrixRow( matrix1, i);
+					
+				}
 		
 			}
-			
-
 			
 		}
 		
@@ -72,6 +95,14 @@ public class MainClass {
 		
 		fillMatrix( matrix );
 		printMatrix( matrix );
+		
+		System.out.println();
+		System.out.println("Output matrix");
+		System.out.println();
+		
+		modifyMatrix( matrix );
+		printMatrix( matrix );
+		
 
 	}
 
