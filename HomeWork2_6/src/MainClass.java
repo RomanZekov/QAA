@@ -38,7 +38,7 @@ public class MainClass {
 		int max = matrix1[x][0];
 		boolean b = true;
 		
-		for (int i = 0; i < 7; i++ ) {
+		for (int i = 0; i < 7 - 1; i++ ) {
 			
 			if ( max < matrix1[x][i+1] ) {
 				
@@ -59,7 +59,7 @@ public class MainClass {
 			
 			for (int j = 0; j < 7 - i - 1; j++) {
 				
-				if ( matrix1[x][j] > matrix1[x][j + 1]) {
+				if ( matrix1[x][j] < matrix1[x][j + 1]) {
 					
 					int t = matrix1[x][j + 1];
 					matrix1[x][j + 1] = matrix1[x][j];
@@ -83,6 +83,36 @@ public class MainClass {
 					
 					SortMatrixRow( matrix1, i);
 					
+				} else break;
+		
+			}
+			
+		}
+		
+	}
+	
+	public static void modifyMatrix2 ( int[][] matrix1 ) {
+		
+		for ( int i = 0; i < 6; i++ ) {
+			
+			int max = matrix1[i][0];
+			int index = 0;
+			
+			for ( int j = 0; j < 7 - 1; j++ ) {
+				
+				if ( max < matrix1[i][j+1] ) {
+					
+					max = matrix1[i][j+1];
+					index = j + 1;
+					
+				}
+				
+				if ( j == 5 && index != 0 ) {
+					
+					int x = matrix1[i][0];
+					matrix1[i][0] = max;
+					matrix1[i][index] = x;
+					
 				}
 		
 			}
@@ -90,6 +120,7 @@ public class MainClass {
 		}
 		
 	}
+	
 	
 	public static void main(String[] args) {
 		
@@ -100,7 +131,8 @@ public class MainClass {
 		System.out.println("Output matrix");
 		System.out.println();
 		
-		modifyMatrix( matrix );
+		//modifyMatrix( matrix );
+		modifyMatrix2( matrix );
 		printMatrix( matrix );
 		
 
