@@ -8,7 +8,7 @@ import static main.utils.TestManager.getDriver;
 import static main.utils.TestManager.waitForPageToLoad;
 
 /**
- * Created by User on 03.11.2015.
+ * Created by Roman on 03.11.2015.
  */
 public class MainPage {
 

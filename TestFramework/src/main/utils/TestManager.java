@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by User on 03.11.2015.
+ * Created by Roman on 03.11.2015.
  */
 public class TestManager {
     private static WebDriver driver;

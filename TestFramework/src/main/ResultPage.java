@@ -3,7 +3,7 @@ package main;
 import static main.utils.TestManager.getDriver;
 
 /**
- * Created by User on 03.11.2015.
+ * Created by Roman on 03.11.2015.
  */
 public class ResultPage {
 
