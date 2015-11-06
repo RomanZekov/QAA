@@ -2,9 +2,11 @@ package main;
 
 import main.utils.TestManager;
 import org.junit.*;
-
 import static org.junit.Assert.assertTrue;
 
+/**
+ * Created by Roman on 03.11.2015.
+ */
 public class Test1 extends TestManager {
 
     @Test
