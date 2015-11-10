@@ -14,7 +14,6 @@ public enum Locators {
 	
 	Locators (String s) {
 		
-		
 	}
 	
 
