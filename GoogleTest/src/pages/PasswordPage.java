@@ -4,7 +4,16 @@ import static conf.TestManager.getDriver;
 
 import org.openqa.selenium.By;
 
+import elements.Button;
+import elements.Checkbox;
+import elements.TextInput;
+
 public class PasswordPage {
+	
+	private TextInput passwordInput = new TextInput(By.id("Password"));
+	private Button signInButton = new Button(By.id("signIn"));
+	private Checkbox rememberMeCheckbox = new Checkbox(By.id("PersistentCoockie"));
+	
 	
 	public PasswordPage enterPassword (String password) {
 		
@@ -16,23 +25,22 @@ public class PasswordPage {
 			e.printStackTrace();
 		
 		}
-	
-		getDriver().findElement(By.id("password")).clear();
-		getDriver().findElement(By.id("password")).sendKeys(password);
+		
+		passwordInput.type(password);
 		return this;
 	
 	}
 
 	public PasswordPage checkRememberMe() {
 	
-		getDriver().findElement(By.id("PersistentCoockie")).click();
+		rememberMeCheckbox.check();
 		return this;
 	
 	}
 
 	public MainPage clickSignIn() {
 	
-		getDriver().findElement(By.id("signIn")).click();
+		signInButton.click();
 		return new MainPage();
 	
 	}

@@ -3,23 +3,24 @@ package pages;
 import org.openqa.selenium.By;
 
 import elements.Button;
+import elements.TextInput;
 
 import static conf.TestManager.getDriver;
 
 public class LoginPage {
 	
 	private Button nextButton = new Button(By.id("next"));
+	private TextInput loginInput = new TextInput(By.id("Email"));
 	
 	public LoginPage enterLogin (String login) {
 		
-		getDriver().findElement(By.id("Email")).clear();
-		getDriver().findElement(By.id("Email")).sendKeys(login);
+		loginInput.type(login);
 		return this;
 	}
 	
 	public PasswordPage pressNext () {
 		
-		getDriver().findElement(By.id("next")).click();
+		nextButton.click();
 		return new PasswordPage();
 		
 	}
