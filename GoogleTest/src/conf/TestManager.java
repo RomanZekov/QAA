@@ -10,8 +10,8 @@ import pages.MainPage;
 
 
 public class TestManager {
-	private static WebDriver driver;
-	public String baseUrl = "https://www.google.com.ua/";
+	protected static WebDriver driver;
+	private String baseUrl = "https://www.google.com.ua/";
 	protected MainPage mainPage;
 	
 	@Before
@@ -33,6 +33,21 @@ public class TestManager {
 		
 		return driver;
 		
+	}
+	
+	public static void waitInSeconds(int seconds) {
+		
+		try {
+			
+			Thread.sleep(seconds*1000);
+			
+		} catch (InterruptedException e) {
+			
+			e.printStackTrace();
+			
+		}
+		
+	
 	}
 
 }

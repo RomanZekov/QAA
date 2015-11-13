@@ -1,8 +1,11 @@
 package elements;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import static conf.TestManager.getDriver;
+import static conf.TestManager.waitInSeconds;
+
 
 public abstract class Element {
 	
@@ -25,6 +28,36 @@ public abstract class Element {
 		
 		return getDriver().findElement(by).getText();
 		
+	}
+	
+	public boolean isPresent() {
+		
+		try {
+			
+			composeWebElement();
+			return true;
+			
+		} catch (NoSuchElementException e ) {
+			
+			return false;
+		}
+		
+	}
+	
+	public void waitForElement() {
+		
+		for (int i =0; i < 10; i++) {
+			
+			if (isPresent()) {
+				
+				break;
+				
+			} else {
+				
+				waitInSeconds(2);
+				
+			}
+		}
 	}
 	
 }
