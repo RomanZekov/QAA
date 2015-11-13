@@ -19,5 +19,12 @@ public abstract class Element {
 		return getDriver().findElement(by);
 		
 	}
+	
 
+	public String getText() {
+		
+		return getDriver().findElement(by).getText();
+		
+	}
+	
 }

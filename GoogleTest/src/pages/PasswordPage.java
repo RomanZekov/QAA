@@ -1,6 +1,6 @@
 package pages;
 
-import static conf.TestManager.getDriver;
+//import static conf.TestManager.getDriver;
 
 import org.openqa.selenium.By;
 
@@ -10,9 +10,9 @@ import elements.TextInput;
 
 public class PasswordPage {
 	
-	private TextInput passwordInput = new TextInput(By.id("Password"));
+	private TextInput passwordInput = new TextInput(By.id("Passwd"));
 	private Button signInButton = new Button(By.id("signIn"));
-	private Checkbox rememberMeCheckbox = new Checkbox(By.id("PersistentCoockie"));
+	private Checkbox rememberMeCheckbox = new Checkbox(By.id("PersistentCookie"));
 	
 	
 	public PasswordPage enterPassword (String password) {
