@@ -31,6 +31,7 @@ public class Email extends TestManager {
         assertTrue(inbox.isBodyPresent(randomBody));
         //assertTrue(inbox.isEmailPresent("zekov.roman78@gmail.com"));
     }
+  
     
     @Test
     public void useAppMenu(){

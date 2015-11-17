@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import elements.TextLabel;
 
 import static conf.TestManager.getDriver;
-//import static conf.TestManager.waitInSeconds; 
+import static conf.TestManager.getUserName; 
 
 public class MainPage {
 	
@@ -23,7 +23,7 @@ public class MainPage {
 
     public MainPage login(){
         clickLogIn().
-                enterLogin("zekov.roman78").
+                enterLogin(getUserName()).
                 pressNext().
                 enterPassword("Nthvbyfnjh").
                 checkRememberMe().

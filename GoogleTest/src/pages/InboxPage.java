@@ -5,6 +5,8 @@ import elements.TextInput;
 import org.openqa.selenium.By;
 //import org.openqa.selenium.UnhandledAlertException;
 
+import data.EmailData;
+
 import static conf.TestManager.getDriver;
 import static conf.TestManager.waitInSeconds;
 
@@ -24,13 +26,14 @@ public class InboxPage {
     private TextInput bodyInput = new TextInput(By.xpath("//div[@aria-label='Тело письма']"));
     
 
-    public InboxPage sendEmail(String address, String body) {
+    public InboxPage sendEmail(String address) {
         composeButton.waitForElement();
         composeButton.click();
         sendButton.waitForElement();
-        receiverInput.type(address);
-        subjectInput.type("Subject");
-        bodyInput.type(body);
+        EmailData emailData = new EmailData(address);
+        receiverInput.type(emailData.getReceiversInString());
+        subjectInput.type(emailData.getSubject());
+        bodyInput.type(emailData.getBody());
         sendButton.click();
         waitInSeconds(5);
         getDriver().navigate().refresh();

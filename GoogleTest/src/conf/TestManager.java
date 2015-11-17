@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import data.UserData;
 import pages.MainPage;
 
 
@@ -17,6 +18,7 @@ public class TestManager {
 	@Before
 	public void setUp() {
 		
+		UserData userData = new UserData("zekov.roman78");
 		driver = new FirefoxDriver();
 		getDriver().get(baseUrl);
 		mainPage = new MainPage();
@@ -48,6 +50,13 @@ public class TestManager {
 		}
 		
 	
+	}
+	
+	public static String getUserName(){
+		
+		UserData userData = new UserData("");
+		return userData.getLogin();
+		
 	}
 
 }
