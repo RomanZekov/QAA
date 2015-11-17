@@ -1,19 +1,21 @@
 package tests;
 
 import conf.TestManager;
-//import org.junit.Before;
 import org.junit.Test;
-//import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.InboxPage;
-//import pages.MainPage;
+import java.util.Random;
 
 import static org.junit.Assert.assertTrue;
+
 
 /**
  * Created by User on 13.11.2015.
  */
 public class Email extends TestManager {
     InboxPage inbox;
+    private StringBuilder initialBody = new StringBuilder("Body ");
+    private int randomIntToBody = new Random().nextInt(50);
+    private String randomBody = new String(initialBody.append(randomIntToBody));
 
 //    @Before
 //    public void setUp() {
@@ -25,8 +27,9 @@ public class Email extends TestManager {
     @Test
     public void firstEmail(){
         InboxPage inbox = mainPage.login().getInboxPage();
-        inbox.sendEmail("zekov.roman78@gmail.com");
-        assertTrue(inbox.isEmailPresent("zekov.roman78@gmail.com"));
+        inbox.sendEmail("zekov.roman78@gmail.com", randomBody);
+        assertTrue(inbox.isBodyPresent(randomBody));
+        //assertTrue(inbox.isEmailPresent("zekov.roman78@gmail.com"));
     }
     
     @Test
