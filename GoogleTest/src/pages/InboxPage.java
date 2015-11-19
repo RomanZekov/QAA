@@ -3,9 +3,9 @@ package pages;
 import elements.Button;
 import elements.TextInput;
 import org.openqa.selenium.By;
-//import org.openqa.selenium.UnhandledAlertException;
 
 import data.EmailData;
+import data.Locators;
 
 import static conf.TestManager.getDriver;
 import static conf.TestManager.waitInSeconds;
@@ -16,14 +16,14 @@ import static conf.TestManager.waitInSeconds;
  */
 public class InboxPage {
 
-    private Button composeButton = new Button(By.className("T-I-KE"));
-    private Button sendButton = new Button(By.xpath("//div[@class='T-I J-J5-Ji aoO T-I-atl L3']"));
-    private Button email = new Button(By.xpath("//span[@email='zekov.roman78@gmail.com']"));
-    private Button body = new Button(By.xpath("//span[@class='y2']"));
+	private Button composeButton = new Button(By.className( Locators.COMPOSE_NEW_MAIL.getValue()) );
+    private Button sendButton = new Button(By.xpath( Locators.SEND_EMAIL.getValue()) );
+    private Button email = new Button( By.xpath( Locators.EMAIL.getValue()) );
+    private Button body = new Button(By.xpath( Locators.BODY.getValue() ));
 
-    private TextInput receiverInput = new TextInput(By.xpath("//textarea[@aria-label='Кому']"));
-    private TextInput subjectInput = new TextInput(By.className("aoT"));
-    private TextInput bodyInput = new TextInput(By.xpath("//div[@aria-label='Тело письма']"));
+    private TextInput receiverInput = new TextInput(By.xpath( Locators.RECEIVER_INPUT.getValue() ));
+    private TextInput subjectInput = new TextInput(By.className( Locators.SUBJECT_INPUT.getValue() ));
+    private TextInput bodyInput = new TextInput(By.xpath( Locators.BODY_INPUT.getValue() ));
     
 
     public InboxPage sendEmail(String address) {

@@ -1,7 +1,8 @@
 package data;
 
-import java.util.LinkedList;
-import java.util.List;
+
+import java.util.*;
+
 
 public class EmailData {
 	private List<String> receivers = new LinkedList<String>();
@@ -28,13 +29,16 @@ public class EmailData {
 		return receivers;
 	}
 	
-	public String getReceiversInString() {
-		String result = "";
-		//Write code to output list as string;
-		return result;
-	}
+    public String getReceiversInString(){
+        String result = "";
+        for(int i = 0; i < receivers.size() - 1; i++){
+            result = result + receivers.get(i) + ", ";
+        }
+        result = result + receivers.get(receivers.size()-1);
+        return result;
+    }
 	
-	public void setReceiver(String receiver) {
+	public void setReceivers(String receiver) {
 		this.receivers.add(receiver);
 	}
 	
@@ -46,8 +50,6 @@ public class EmailData {
 			
 		}
 	}
-	
-	
 	
 	public String getSubject() {
 		return subject;
