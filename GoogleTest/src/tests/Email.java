@@ -3,7 +3,6 @@ package tests;
 import conf.TestManager;
 import org.junit.Test;
 import pages.InboxPage;
-import java.util.Random;
 
 import static org.junit.Assert.assertTrue;
 
@@ -13,9 +12,6 @@ import static org.junit.Assert.assertTrue;
  */
 public class Email extends TestManager {
     InboxPage inbox;
-    private StringBuilder initialBody = new StringBuilder("Body ");
-    private int randomIntToBody = new Random().nextInt(50);
-    private String randomBody = new String(initialBody.append(randomIntToBody));
 
 //    @Before
 //    public void setUp() {
@@ -27,9 +23,8 @@ public class Email extends TestManager {
     @Test
     public void firstEmail(){
         InboxPage inbox = mainPage.login().getInboxPage();
-        inbox.sendEmail("zekov.roman78@gmail.com", randomBody);
-        assertTrue(inbox.isBodyPresent(randomBody));
-        //assertTrue(inbox.isEmailPresent("zekov.roman78@gmail.com"));
+        inbox.sendEmail( getEmail() );
+        assertTrue(inbox.isBodyPresent( getEmailBody() ));
     }
   
     

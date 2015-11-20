@@ -11,12 +11,12 @@ public class Login  extends TestManager{
 
 
   @Test
-  public void Login() {
+  public void LoginTest() {
 
 	  mainPage.clickLogIn().
-	  		   enterLogin("zekov.roman78").
+	  		   enterLogin( getUserName() ).
 	  		   pressNext().
-	  		   enterPassword("Nthvbyfnjh").
+	  		   enterPassword( getPass() ).
 	  		   checkRememberMe().
 	  		   clickSignIn();
 	  //assertTrue("Incorrect page is displayed.", mainPage.isPresent());

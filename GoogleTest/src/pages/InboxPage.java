@@ -4,12 +4,13 @@ import elements.Button;
 import elements.TextInput;
 import org.openqa.selenium.By;
 
-import data.EmailData;
 import data.Locators;
 
 import static conf.TestManager.getDriver;
 import static conf.TestManager.waitInSeconds;
-
+import static conf.TestManager.getEmailSubject;
+import static conf.TestManager.getEmailBody;
+import static conf.TestManager.getEmailReceiversInStr;
 
 /**
  * Created by User on 13.11.2015.
@@ -29,11 +30,11 @@ public class InboxPage {
     public InboxPage sendEmail(String address) {
         composeButton.waitForElement();
         composeButton.click();
+        
         sendButton.waitForElement();
-        EmailData emailData = new EmailData(address);
-        receiverInput.type(emailData.getReceiversInString());
-        subjectInput.type(emailData.getSubject());
-        bodyInput.type(emailData.getBody());
+        receiverInput.type( getEmailReceiversInStr() );
+        subjectInput.type( getEmailSubject() );
+        bodyInput.type( getEmailBody());
         sendButton.click();
         waitInSeconds(5);
         getDriver().navigate().refresh();

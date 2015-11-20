@@ -3,18 +3,23 @@ package pages;
 import elements.Button;
 import elements.Link;
 import org.openqa.selenium.By;
+
+import data.Locators;
 import elements.TextLabel;
 
 import static conf.TestManager.getDriver;
-import static conf.TestManager.getUserName; 
+import static conf.TestManager.getUserName;
+import static conf.TestManager.waitInSeconds;
+import static conf.TestManager.getPass;
 
 public class MainPage {
 	
-	private Button signInButton = new Button(By.id("gb_70"));
-	private Button mailButton = new Button(By.xpath(".//*[@id='gb23']/span[1]"));
-	private TextLabel nameLabel = new TextLabel(By.cssSelector(".gb_P.gb_R"));
-	private Link googleApps = new Link(By.xpath(".//*[@id='gbwa']/div[1]/a"));
-	
+	private Button signInButton = new Button(By.id(Locators.GOOGLE_SIGN_IN.getValue()));
+	private Button mailButton = new Button(By.xpath(Locators.GMAIL_LINK.getValue()));
+	private TextLabel nameLabel = new TextLabel(By.cssSelector(Locators.NAME_LABEL.getValue()));
+	private Link googleApps = new Link(By.xpath(Locators.GOOGLE_APPS_MENU.getValue()));
+	private Button confirmationButton = new Button(By.xpath(Locators.CONFIRMATION_BUTTON.getValue()));
+
 	
     public LoginPage clickLogIn(){
         signInButton.click();
@@ -23,9 +28,9 @@ public class MainPage {
 
     public MainPage login(){
         clickLogIn().
-                enterLogin(getUserName()).
+                enterLogin( getUserName() ).
                 pressNext().
-                enterPassword("Nthvbyfnjh").
+                enterPassword( getPass() ).
                 checkRememberMe().
                 clickSignIn();
         return this;
@@ -33,7 +38,11 @@ public class MainPage {
     
     //Created by Sergey M.
     public InboxPage getInboxPage(){
-        getDriver().get("https://mail.google.com/");
+        waitInSeconds(1);
+        if(confirmationButton.isPresent()){	confirmationButton.click(); }
+        googleApps.click();
+        mailButton.waitForElement();
+        mailButton.click();
         return new InboxPage();
     }
     

@@ -25,6 +25,11 @@ public class EmailData {
 		
 	}
 	
+	public EmailData(String receiver, String body) {
+		this.receivers.add(receiver);
+		this.body = body;
+	}
+	
 	public List<String> getReceivers() {
 		return receivers;
 	}
