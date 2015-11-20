@@ -10,6 +10,7 @@ public enum Locators {
 	SUBJECT_INPUT("aoT"),
 	BODY_INPUT("//div[@aria-label='Тело письма']"),
 	//CHECKBOX_DELETE("//span[contains(text(),'Body 4')]/../../../../..//div[@role='checkbox']"),
+	DELETE_EMAIL_BUTTON(".//div[@aria-label='Удалить']"),
 /*-------------------------------------------------------------------*/	
 	GOOGLE_SIGN_IN("gb_70"),
 	GMAIL_LINK(".//*[@id='gb23']/span[1]"),
